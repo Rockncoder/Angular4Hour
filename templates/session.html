@@ -1,0 +1,11 @@
+<div>
+    <h1>{{session.currentSession.Title}}</h1>
+
+    <div>
+        <a href="http://www.google.com" ng-href="#/presenters/{{session.currentSession.MemberID}}">
+            <h4 class="col">{{session.currentSession.FirstName + " " + session.currentSession.LastName}}</h4>
+        </a>
+        <div class="col">{{session.currentSession.Start | jsonDate : 'medium'}}</div>
+        <div ng-bind-html="session.currentSession.Description  | unsafe"></div>
+    </div>
+</div>
