@@ -1,0 +1,12 @@
+<div>
+    <h2 class="text-center">{{presenter.currentPresenter.FirstName + " " + presenter.currentPresenter.LastName}}</h2>
+    <ul class="list-group">
+        <li ng-repeat="session in presenter.sessions" class="list-group-item" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+            <a href="http://www.google.com" ng-href="#/sessions/{{session.SessionID}}">
+                <h3><div>{{session.Title}}</div></h3>
+                <div class="col">{{session.Start | jsonDate : 'medium'}}</div>
+                <div ng-bind-html="session.Brief_Description  | unsafe"></div>
+            </a>
+        </li>
+    </ul>
+</div>

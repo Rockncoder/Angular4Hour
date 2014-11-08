@@ -1,0 +1,14 @@
+<div>
+    <h1>Presenters</h1>
+    <div>
+        <ul class="list-group">
+            <li ng-repeat="presenter in presenters.presenters" class="list-group-item">
+                <a href="http://www.google.com" ng-href="#presenters/{{presenter.MemberID}}">
+                    <h3>{{$index + 1}}: {{presenter.FirstName + " " + presenter.LastName}}</h3>
+                    <ng-pluralize count="presenter.TotalSessions" when="{'one':'1 session', 'other':'{} sessions'}">
+                    </ng-pluralize>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

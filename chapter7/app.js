@@ -1,15 +1,11 @@
 (function(){
     "use strict";
 
-    angular.module("CodeCamp",['ngRoute', 'angular-data.DSCacheFactory', 'ngAnimate'])
+    angular.module("CodeCamp",['ngRoute'])
         .constant("SESSIONS_URL", "http://tekadept.com/codecamp/sessions")
         .constant("PRESENTERS_URL", "http://tekadept.com/codecamp/presenters")
-        .run(function(DSCacheFactory){
-            console.log("Hello from run");
-
-            DSCacheFactory("sessionsCache", {storageMode: "localStorage", maxAge: 10800000, deleteOnExpire: "aggressive"});
-            DSCacheFactory("presentersCache", {storageMode: "localStorage", maxAge: 10800000, deleteOnExpire: "aggressive"});
-
+        .run(function(){
+            console.log("Hello from run ");
         })
         .filter('unsafe', function ($sce) {
             return function (val) {
